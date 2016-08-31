@@ -17,13 +17,16 @@
 public class Nomina {
 
 	public static void main(String[] args) {
+		Double[] salarios = new Double [5];
+
 		Double valsal = (double) 2000000;
+		salarios[0] = valsal;
 		System.out.println("Salario Empleado 1: " + valsal);
 		for (int i = 1; i < 5; i++) {
 		    
 			valsal = calcula_salario(valsal); 
-			
-			System.out.println("Salario Empleado " + i + " " + valsal);
+			salarios[i] = valsal;
+			System.out.println("Salario Empleado " + (i+1) + ": " + valsal);
 		    
 		}
 	}
