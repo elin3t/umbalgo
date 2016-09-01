@@ -1,39 +1,45 @@
-//UMB Virtual - IngenierÌa de Software - Semestre II - Algoritmica y ProgramaciÛn
+//UMB Virtual - Ingenier√≠a de Software - Semestre II - Algoritmica y Programaci√≥n
 //Profesora: Brigitte Rodriguez Mendoza
 //Estudiosos: Bairon Jose Garcia Mendoza
 //			  Eliecer Urbano Daza Parra
 //			  Jorge  Manuel  Galindo  Yanez
-//		      Julian  David  CastaÒeda
+//		      Julian  David  Casta√±eda
 
 //Programa que calcula el valor a pagar a 5 empleados, 
-//el primero gana 2 millones, el segundo gana el 10% m·s que el primero, 
-//el tercero el 10% m·s que el segundo, y asÌ sucesivamente hasta llegar al quinto. Se deben hacer tres rutinas.
+//el primero gana 2 millones, el segundo gana el 10% m√°s que el primero, 
+//el tercero el 10% m√°s que el segundo, y as√≠ sucesivamente hasta llegar al quinto. Se deben hacer tres rutinas.
 //	 La primera, debe calcular el salario.
-//	 La segunda, debe calcular el valor neto a pagar considerando descuentos como retenciÛn en la fuente (puede ser 14%), seguro social y pensiÛn.
-//	 La tercera, debe imprimir la informaciÛn de cada empleado (salario, valor de la retenciÛn en la fuente, valor del seguro social, valor pensiÛn, neto a pagar).
+//	 La segunda, debe calcular el valor neto a pagar considerando descuentos como retenci√≥n en la fuente (puede ser 14%), seguro social y pensi√≥n.
+//	 La tercera, debe imprimir la informaci√≥n de cada empleado (salario, valor de la retenci√≥n en la fuente, valor del seguro social, valor pensi√≥n, neto a pagar).
 
-/* Se importan librerÌas*/ 
+/* Se importan librer√≠as*/ 
+import java.text.DecimalFormat;
 
 public class Nomina {
-
 	public static void main(String[] args) {
 		Double[] salarios = new Double [5];
-
+		// Definimos el formato de valores a utilizar en el programa
+		DecimalFormat formateador = new DecimalFormat("'$',###,###.##");
+		String valFinal ="";
 		Double valsal = (double) 2000000;
 		salarios[0] = valsal;
-		System.out.println("Salario Empleado 1: " + valsal);
+		valFinal=formateador.format(valsal);
+		System.out.println("Salario Empleado 1 es de: " + valFinal);
+		
 		for (int i = 1; i < 5; i++) {
-		    
 			valsal = calcula_salario(valsal); 
 			salarios[i] = valsal;
-			System.out.println("Salario Empleado " + (i+1) + ": " + valsal);
-		    
+			// Imprimimos los valores con el nuevo formato
+			valFinal=formateador.format(valsal);
+			System.out.println("Salario Empleado "+ (i) + " es de: "+valFinal);
 		}
 	}
-
+	
+	
 	static double calcula_salario(double salario){
 		double newsalario;
 		newsalario = (double) (salario * 1.1);
 		return newsalario;
 	}
+
 }
