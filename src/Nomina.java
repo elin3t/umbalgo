@@ -1,9 +1,8 @@
-//UMB Virtual - Ingenieria de Software - Semestre II - Algoritmica y Programacion
+//UMB Virtual - Ingenieria de Software - Semestre II-2016 - Algoritmica y Programacion
 //Profesora: Brigitte Rodriguez Mendoza
 //Estudiosos: Bairon Jose Garcia Mendoza
 //			  Eliecer Urbano Daza Parra
 //			  Jorge  Manuel  Galindo  Yanez
-//		      Julian  David  Castaneda
 
 //Programa que calcula el valor a pagar a 5 empleados, 
 //el primero gana 2 millones, el segundo gana el 10% mas que el primero, 
@@ -18,7 +17,7 @@ import java.text.DecimalFormat;
 public class Nomina {
 
 	public static void main(String[] args) {
-		//multidimensional array para guardar [salario, retefuente, salud, pension ]
+		//multidimensional array para guardar [salario, retefuente, salud, pension, salario neto ]
 		Double[][] salarios = new Double [5][5];
 		Double valsal = (double) 2000000;
 
